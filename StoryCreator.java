@@ -4,6 +4,7 @@ import java.util.Scanner;
 public class StoryCreator {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        int index;
         ArrayList<String> storyNames = new ArrayList<>(Arrays.asList(
             "The Lost Amulet", "The Enchanted Mirror", "The Cursed Ring",
             "The Whispering Scroll", "The Crystal Orb", "The Starlight Compass",
@@ -73,14 +74,15 @@ public class StoryCreator {
             System.out.println(
                 "<---------------------------------------------Story Constructor------------------------------------------------->");
             System.out.println(
-                "Here is how it works\nYou first select a stroy template\nYou provide required details\nYou preview your Stroy and edit if you want\nYou save your created story by copying it from terminal\n");
+                "Here is how it works\nYou first select a stroy template.\nYou provide required details.\nYou preview your Stroy and edit it if you want.\nYou save your created story by copying it from terminal.\n");
             System.out.println(
                 "Select the story template by writing its number:");
             for (int i = 0; i < storyNames.size(); i++) {
                 System.out.println(i + 1 + " " + storyNames.get(i));
             }
             do {
-                int index = scanner.nextInt();
+                System.out.print("\nEnter number:");
+                index = scanner.nextInt();
                 if (index > 10 || index <= 0) {
                     System.out.println(
                         "You have entered an invalid number\nTry Again!");
@@ -88,14 +90,38 @@ public class StoryCreator {
                     break;
 
             } while (true);
-
+            index = index - 1;
+            scanner.nextLine();
+            stroyDetails(scanner, index, storyTamplate);
             System.out.println(
                 "Would you like to generate another Story?(true/false)");
-            scanner.nextLine();
+
             Boolean choice = Boolean.valueOf(scanner.nextLine());
             if (!choice) {
                 break;
             }
         } while (true);
+    }
+    public static void stroyDetails(Scanner scanner, int index,
+                                    ArrayList<String> storyTamplate) {
+        String userDetails;
+        String story = storyTamplate.get(index);
+        System.out.println("Enter name of your character:");
+        userDetails = scanner.nextLine();
+        story = story.replace("[name]", userDetails);
+        System.out.println("Enter age of your character:");
+        userDetails = scanner.nextLine();
+        story = story.replace("[age]", userDetails);
+        if (story.contains("occupation")) {
+            System.out.println("Enter occupation of your character:");
+            userDetails = scanner.nextLine();
+            story = story.replace("[occupation]", userDetails);
+        }
+        System.out.println("Enter place in which story takes place:");
+        userDetails = scanner.nextLine();
+        story = story.replace("[place]", userDetails);
+        System.out.println("Enter year in which story takes place:");
+        userDetails = scanner.nextLine();
+        story = story.replace("[year]", userDetails);
     }
 }
