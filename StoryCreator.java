@@ -74,7 +74,7 @@ public class StoryCreator {
             System.out.println(
                 "<---------------------------------------------Story Constructor------------------------------------------------->");
             System.out.println(
-                "Here is how it works\nYou first select a stroy template.\nYou provide required details.\nYou preview your Stroy and edit it if you want.\nYou save your created story by copying it from terminal.\n");
+                "Here is how it works:\n\nYou first select a stroy template.\nYou provide required details.\nYou preview your Stroy and edit it if you want.\nYou get the display of your story on terminal.\nYou save your created story by copying it from terminal.\n");
             System.out.println(
                 "Select the story template by writing its number:");
             for (int i = 0; i < storyNames.size(); i++) {
@@ -124,21 +124,42 @@ public class StoryCreator {
         userDetails = scanner.nextLine();
         userStory = userStory.replace("[year]", userDetails);
         System.out.println("Your stroy is created successfully");
-        System.out.println(
-            "\n What do you like to do?\nEnter \"1\" to edit your story\nEnter \"2\" to display the final version of your story");
-        int choice = scanner.nextInt();
-        switch (choice) {
-        case 1: {
+        System.out.println("Here is the preview of your story:");
+        String[] partsOfStory = userStory.split("\n");
+        for (int i = 0; i < partsOfStory.length; i++) {
+            System.out.print("                                 ");
+            if (i == 0) {
+                System.out.print("\"");
+            }
+            if (i == partsOfStory.length - 1) {
+                System.out.println(partsOfStory[i] + "\"");
+            } else
+                System.out.println(partsOfStory[i]);
+        }
+        do {
+            System.out.println(
+                "\nWhat do you like to do?\nEnter \"1\" to edit your story.\nEnter \"2\" to display the final version of your story.");
+            int choice = scanner.nextInt();
+            switch (choice) {
+            case 1: {
 
-            break;
-        }
-        case 2: {
+                break;
+            }
+            case 2: {
 
-            break;
-        }
-        default: {
-            System.out.println("You have entered an invalid input\nTryAgain!");
-        }
-        }
+                break;
+            }
+            default: {
+                System.out.println(
+                    "You have entered an invalid input\nTryAgain!");
+            }
+            }
+            if (choice == 1 || choice == 2) {
+                break;
+            }
+        } while (true);
+    }
+    public static void editStory(String story, String[] partsOfStory) {
+        System.out.println();
     }
 }
