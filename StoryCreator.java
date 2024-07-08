@@ -105,23 +105,40 @@ public class StoryCreator {
     public static void stroyDetails(Scanner scanner, int index,
                                     ArrayList<String> storyTamplate) {
         String userDetails;
-        String story = storyTamplate.get(index);
+        String userStory = storyTamplate.get(index);
         System.out.println("Enter name of your character:");
         userDetails = scanner.nextLine();
-        story = story.replace("[name]", userDetails);
+        userStory = userStory.replace("[name]", userDetails);
         System.out.println("Enter age of your character:");
         userDetails = scanner.nextLine();
-        story = story.replace("[age]", userDetails);
-        if (story.contains("occupation")) {
+        userStory = userStory.replace("[age]", userDetails);
+        if (userStory.contains("occupation")) {
             System.out.println("Enter occupation of your character:");
             userDetails = scanner.nextLine();
-            story = story.replace("[occupation]", userDetails);
+            userStory = userStory.replace("[occupation]", userDetails);
         }
         System.out.println("Enter place in which story takes place:");
         userDetails = scanner.nextLine();
-        story = story.replace("[place]", userDetails);
+        userStory = userStory.replace("[place]", userDetails);
         System.out.println("Enter year in which story takes place:");
         userDetails = scanner.nextLine();
-        story = story.replace("[year]", userDetails);
+        userStory = userStory.replace("[year]", userDetails);
+        System.out.println("Your stroy is created successfully");
+        System.out.println(
+            "\n What do you like to do?\nEnter \"1\" to edit your story\nEnter \"2\" to display the final version of your story");
+        int choice = scanner.nextInt();
+        switch (choice) {
+        case 1: {
+
+            break;
+        }
+        case 2: {
+
+            break;
+        }
+        default: {
+            System.out.println("You have entered an invalid input\nTryAgain!");
+        }
+        }
     }
 }
