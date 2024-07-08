@@ -4,8 +4,71 @@ import java.util.Scanner;
 public class StoryCreator {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        ArrayList<String> storyNames = new ArrayList<>(Arrays.asList());
-        ArrayList<String> storyTamplate = new ArrayList<>(Arrays.asList());
+        ArrayList<String> storyNames = new ArrayList<>(Arrays.asList(
+            "The Lost Amulet", "The Enchanted Mirror", "The Cursed Ring",
+            "The Whispering Scroll", "The Crystal Orb", "The Starlight Compass",
+            "The Eternal Rose", "The Phoenix Feather", "The Lunar Pendant",
+            "The Whispering Oak Staff"));
+        ArrayList<String> storyTamplate = new ArrayList<>(Arrays.asList(
+            "In a remote jungle temple, [name] stumbled upon an ancient amulet.\n"
+                +
+                "At [age], [name] discovered the amulet's hidden power to control minds.\n"
+                +
+                "[name] embarked on a quest in [place] to uncover the amulet's origins in [year].",
+
+            "Within a forgotten castle, [name] found a mirror that showed glimpses of the future.\n"
+                +
+                "At [age], [name] witnessed a prophecy in the mirror about [occupation].\n"
+                +
+                "[name] ventured across [place] to understand the mirror's mysteries in [year].",
+
+            "While exploring a haunted mansion, [name] uncovered a ring with a dark curse.\n"
+                +
+                "At [age], [name] experienced the ring's ability to manipulate time.\n"
+                +
+                "[name] braved the depths of [place] to break the curse in [year].",
+
+            "Deep within an ancient library, [name] stumbled upon a scroll that whispered secrets.\n"
+                +
+                "At [age], [name] deciphered the scroll's ancient language revealing hidden knowledge.\n"
+                +
+                "[name] journeyed through [place] to protect the scroll from evil forces in [year].",
+
+            "In a mystical cavern, [name] discovered a crystal orb that revealed distant lands.\n"
+                +
+                "At [age], [name] glimpsed the future through visions in the orb.\n"
+                +
+                "[name] embarked on a voyage across [place] to uncover the orb's purpose in [year].",
+
+            "On a starlit beach, [name] found a compass that guided journeys across dimensions.\n"
+                +
+                "At [age], [name] unlocked the compass's ability to navigate through time.\n"
+                +
+                "[name] traveled through [place] to unlock the compass's full potential in [year].",
+
+            "Within a magical garden, [name] discovered a rose that bloomed endlessly.\n"
+                +
+                "At [age], [name] witnessed the rose's power to heal wounds and grant eternal life.\n"
+                +
+                "[name] embarked on a quest across [place] to protect the rose from darkness in [year].",
+
+            "Amidst the ruins of an ancient battlefield, [name] found a phoenix feather imbued with fiery magic.\n"
+                +
+                "At [age], [name] harnessed the feather's ability to summon flames and rebirth.\n"
+                +
+                "[name] journeyed through [place] to understand the feather's significance in [year].",
+
+            "Beneath a celestial observatory, [name] unearthed a pendant that glowed with moonlight.\n"
+                +
+                "At [age], [name] uncovered the pendant's power to control tides and emotions.\n"
+                +
+                "[name] ventured across [place] to protect the pendant from falling into the wrong hands in [year].",
+
+            "In the heart of an enchanted forest, [name] discovered a staff carved from the whispering oak tree.\n"
+                +
+                "At [age], [name] mastered the staff's ability to commune with forest spirits and command nature.\n"
+                +
+                "[name] strode through [place] to restore balance to the forest in [year]."));
         System.out.println(
             "<---------------------------------------------Story Constructor------------------------------------------------->");
         System.out.println(
