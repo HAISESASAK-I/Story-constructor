@@ -69,10 +69,33 @@ public class StoryCreator {
                 "At [age], [name] mastered the staff's ability to commune with forest spirits and command nature.\n"
                 +
                 "[name] strode through [place] to restore balance to the forest in [year]."));
-        System.out.println(
-            "<---------------------------------------------Story Constructor------------------------------------------------->");
-        System.out.println(
-            "Here is how it works\nYou first select a stroy template\nYou provide required details\nYou preview your Stroy and edit if you want\nYou save your created story by copying it from terminal\n");
-        System.out.println("Select the story template by writing its number:");
+        do {
+            System.out.println(
+                "<---------------------------------------------Story Constructor------------------------------------------------->");
+            System.out.println(
+                "Here is how it works\nYou first select a stroy template\nYou provide required details\nYou preview your Stroy and edit if you want\nYou save your created story by copying it from terminal\n");
+            System.out.println(
+                "Select the story template by writing its number:");
+            for (int i = 0; i < storyNames.size(); i++) {
+                System.out.println(i + 1 + " " + storyNames.get(i));
+            }
+            do {
+                int index = scanner.nextInt();
+                if (index > 10 || index <= 0) {
+                    System.out.println(
+                        "You have entered an invalid number\nTry Again!");
+                } else
+                    break;
+
+            } while (true);
+
+            System.out.println(
+                "Would you like to generate another Story?(true/false)");
+            scanner.nextLine();
+            Boolean choice = Boolean.valueOf(scanner.nextLine());
+            if (!choice) {
+                break;
+            }
+        } while (true);
     }
 }
