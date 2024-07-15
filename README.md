@@ -1,9 +1,11 @@
 # Story-constructor
 
-Overview
+Overview:
+
 The Story Creator is a Java program designed to generate and edit fictional stories based on user inputs. It offers predefined story templates with placeholders that users can fill in with character names, ages, occupations, locations, and years. This allows users to create personalized narratives easily.
 
-Features
+Features:
+
 Template Selection: Choose from a variety of story templates such as "The Lost Amulet", "The Enchanted Mirror", and more.
 User Input: Input specific details like character names, ages, occupations (if applicable), locations, and years to personalize the story.
 Preview and Edit: Preview the generated story and edit specific parts based on user preference.
