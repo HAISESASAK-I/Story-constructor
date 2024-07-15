@@ -126,23 +126,15 @@ public class StoryCreator {
         System.out.println("Your stroy is created successfully");
         System.out.println("Here is the preview of your story:");
         String[] partsOfStory = userStory.split("\n");
-        for (int i = 0; i < partsOfStory.length; i++) {
-            System.out.print("                                 ");
-            if (i == 0) {
-                System.out.print("\"");
-            }
-            if (i == partsOfStory.length - 1) {
-                System.out.println(partsOfStory[i] + "\"");
-            } else
-                System.out.println(partsOfStory[i]);
-        }
+        displayStory(userStory, partsOfStory);
+
         do {
             System.out.println(
                 "\nWhat do you like to do?\nEnter \"1\" to edit your story.\nEnter \"2\" to display the final version of your story.");
             int choice = scanner.nextInt();
             switch (choice) {
             case 1: {
-
+                editStory(userStory, partsOfStory);
                 break;
             }
             case 2: {
@@ -161,5 +153,17 @@ public class StoryCreator {
     }
     public static void editStory(String story, String[] partsOfStory) {
         System.out.println();
+    }
+    public static void displayStory(String story, String[] partsOfStory) {
+        for (int i = 0; i < partsOfStory.length; i++) {
+            System.out.print("                                 ");
+            if (i == 0) {
+                System.out.print("\"");
+            }
+            if (i == partsOfStory.length - 1) {
+                System.out.println(partsOfStory[i] + "\"");
+            } else
+                System.out.println(partsOfStory[i]);
+        }
     }
 }
