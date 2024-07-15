@@ -134,11 +134,13 @@ public class StoryCreator {
             int choice = scanner.nextInt();
             switch (choice) {
             case 1: {
-                editStory(userStory, partsOfStory);
+                editStory(scanner, userStory, partsOfStory);
                 break;
             }
             case 2: {
-
+                displayStory(userStory, partsOfStory);
+                System.out.println(
+                    "You can copy the story by selecting it from the terminal");
                 break;
             }
             default: {
@@ -151,10 +153,38 @@ public class StoryCreator {
             }
         } while (true);
     }
-    public static void editStory(String story, String[] partsOfStory) {
-        System.out.println();
+    public static void editStory(Scanner scanner, String story,
+                                 String[] partsOfStory) {
+        String edit;
+        System.out.println("Here is the preview of your stroy again:");
+        displayStory(story, partsOfStory);
+        scanner.nextLine();
+        while (true) {
+            System.out.println("Enter the line or word you like to edit:");
+
+            edit = scanner.nextLine();
+
+            if (story.contains(edit)) {
+                break;
+            }
+            System.out.println(
+                "You have entered invalid input kindly enter valid input info to edit.\n");
+        }
+        System.out.println("Enter the script you want to edit \"" + edit +
+                           "\" with?");
+        String userScript = scanner.nextLine();
+
+        story = story.replace(edit, userScript);
+
+        System.out.println("You have edited the story successfully!");
+        System.out.println("Here is the final version of you story:");
+        partsOfStory = story.split("\n");
+        displayStory(story, partsOfStory);
+        System.out.println(
+            "You can copy the story by selecting and copying it from the terminal!");
     }
     public static void displayStory(String story, String[] partsOfStory) {
+
         for (int i = 0; i < partsOfStory.length; i++) {
             System.out.print("                                 ");
             if (i == 0) {
